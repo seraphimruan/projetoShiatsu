@@ -10,11 +10,17 @@ http://www.springframework.org/schema/mvc
 http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
 
 
+  <bean class= "org.springframework.web.servlet.view.InternalResourceViewResolver">
+  	<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+  	<property name="prefix" value="/views"/>
+  	<property name="suffix" value=".jsp"/>
+  </bean>
+
   <mvc:resources mapping="/css/**" location="/css/" cache-period="120"/>
  
   <mvc:resources mapping="/js/**" location="/js/" cache-period="120"/>
  
-  <mvc:resources mapping="/img/**" location="/img/" cache-period="120"/>
+  <mvc:resources mapping="/img/**" location="/img" cache-period="120"/>
  	
   <mvc:annotation-driven />
   
